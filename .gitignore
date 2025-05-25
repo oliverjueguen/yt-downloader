@@ -1,0 +1,37 @@
+# Bytecode y caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Entornos virtuales
+env/
+venv/
+ytmp3env/
+
+# Archivos de logs y bases de datos locales
+*.log
+*.sqlite3
+*.db
+
+# Archivos de configuración sensibles (opcional)
+.env
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales del editor
+.vscode/
+*.swp
+
+# Archivos descargados (MP3 / MP4 en caso de pruebas)
+*.mp3
+*.mp4
+
+# Zip de despliegue local
+*.zip
+
+# Docker
+*.tar
+*.pid

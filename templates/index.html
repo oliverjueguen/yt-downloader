@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="https://www.youtube.com/s/desktop/e38dcd98/img/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.icons8.com/fluency/96/youtube-play.png" alt="Logo" class="logo">
+        <h2>Descargar de YouTube</h2>
+        <form method="POST" onsubmit="showLoader()">
+            <input type="text" name="url" placeholder="Pega la URL de YouTube" required>
+            <select name="format">
+                <option value="mp3" selected>🎵 MP3 (audio)</option>
+                <option value="mp4">🎥 MP4 (video)</option>
+            </select>
+            <button type="submit">Descargar</button>
+        </form>
+        <div class="loader" id="loader"></div>
+        {% if mensaje %}
+            <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function showLoader() {
+            document.getElementById("loader").style.display = "block";
+        }
+    </script>
+</body>
+</html>
