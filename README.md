@@ -1,4 +1,4 @@
-readme_content = """# YT Downloader – Local Media Processing Pipeline
+# YT Downloader – Local Media Processing Pipeline
 
 A lightweight, container-ready media processing service built with **Flask** and **yt-dlp**.
 This project provides a clean and secure solution for downloading YouTube videos or extracting audio while demonstrating best practices in documentation, architecture, and cloud-readiness—ideal for DevOps and Cloud Engineering portfolios.
