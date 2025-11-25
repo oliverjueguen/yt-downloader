@@ -1,7 +1,7 @@
 # YT Downloader – Local Media Processing Pipeline
 
 A lightweight, container-ready media processing service built with **Flask** and **yt-dlp**.
-This project provides a clean and secure solution for downloading YouTube videos or extracting audio while demonstrating best practices in documentation, architecture, and cloud-readiness—ideal for DevOps and Cloud Engineering portfolios.
+This project provides a clean and secure solution for downloading YouTube videos or extracting audio while demonstrating best practices in documentation, architecture, and cloud‑readiness—ideal for DevOps and Cloud Engineering portfolios.
 
 ---
 
@@ -26,11 +26,13 @@ flowchart TD
     DL --> TMP[Temporary Filesystem]
     TMP --> R
     R -->|File Response| U
-📁 Project Structure
-php
-Mostrar siempre los detalles
+```
 
-Copiar código
+---
+
+## 📁 Project Structure
+
+```
 yt-downloader/
 │
 ├── app.py                # Flask application and routing logic
@@ -38,109 +40,119 @@ yt-downloader/
 ├── Dockerfile            # Production-ready container image definition
 ├── templates/            # HTML templates (UI)
 └── static/               # CSS and assets
-⚙️ Local Setup (Development)
-1. Clone the repository
-bash
-Mostrar siempre los detalles
+```
 
-Copiar código
+---
+
+## ⚙️ Local Setup (Development)
+
+### 1. Clone the repository
+```bash
 git clone <your_repo_url>
 cd yt-downloader
-2. Create a virtual environment
-bash
-Mostrar siempre los detalles
+```
 
-Copiar código
+### 2. Create a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate   # macOS / Linux
-venv\Scripts\activate      # Windows
-3. Install dependencies
-bash
-Mostrar siempre los detalles
+venv\Scriptsctivate      # Windows
+```
 
-Copiar código
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
-4. Run the application
-bash
-Mostrar siempre los detalles
+```
 
-Copiar código
+### 4. Run the application
+```bash
 python app.py
-5. Open the UI
-arduino
-Mostrar siempre los detalles
+```
 
-Copiar código
+### 5. Open the UI
+```
 http://localhost:5000
-🐳 Running with Docker (Recommended)
-Build the image
-bash
-Mostrar siempre los detalles
+```
 
-Copiar código
+---
+
+## 🐳 Running with Docker (Recommended)
+
+### Build the image
+```bash
 docker build -t yt-downloader .
-Run the container
-bash
-Mostrar siempre los detalles
+```
 
-Copiar código
+### Run the container
+```bash
 docker run -d -p 5000:5000 yt-downloader
+```
+
 Service available at:
-
-arduino
-Mostrar siempre los detalles
-
-Copiar código
+```
 http://localhost:5000
-☁️ Optional: Deploying to Azure
-These deployment steps are optional and demonstrate cloud-readiness for recruiters.
+```
 
-Option A — Azure App Service (Docker)
-Build and push the image to ACR:
+---
 
-bash
-Mostrar siempre los detalles
+## ☁️ Optional: Deploying to Azure
 
-Copiar código
+> These deployment steps are optional and demonstrate cloud‑readiness for recruiters.
+
+### Option A — Azure App Service (Docker)
+
+1. Build and push the image to ACR:
+```bash
 az acr build --image yt-downloader:v1 --registry <acrName> --file Dockerfile .
-Create the Web App:
+```
 
-bash
-Mostrar siempre los detalles
+2. Create the Web App:
+```bash
+az webapp create   --name yt-downloader-app   --resource-group <group>   --plan <appServicePlan>   --deployment-container-image-name <acrName>.azurecr.io/yt-downloader:v1
+```
 
-Copiar código
-az webapp create \
-  --name yt-downloader-app \
-  --resource-group <group> \
-  --plan <appServicePlan> \
-  --deployment-container-image-name <acrName>.azurecr.io/yt-downloader:v1
-Option B — Azure Container Apps
-bash
-Mostrar siempre los detalles
+### Option B — Azure Container Apps
+```bash
+az containerapp create   --name yt-downloader   --resource-group <group>   --environment <containerEnv>   --image <acrName>.azurecr.io/yt-downloader:v1   --target-port 5000   --ingress external
+```
 
-Copiar código
-az containerapp create \
-  --name yt-downloader \
-  --resource-group <group> \
-  --environment <containerEnv> \
-  --image <acrName>.azurecr.io/yt-downloader:v1 \
-  --target-port 5000 \
-  --ingress external
-🔧 Tech Stack
-Python 3.10+
+---
 
-Flask
+## 🔧 Tech Stack
 
-yt-dlp
+- **Python 3.10+**
+- **Flask**
+- **yt-dlp**
+- **Docker**
+- **Azure (optional)**
 
-Docker
+---
 
-Azure (optional)
+## 📈 Roadmap
 
-📈 Roadmap
-Feature	Status	Priority
-Add download progress indicator	Planned	Medium
-Playlist download support	Planned	High
-API mode (JSON endpoints)	Planned	High
-Authentication layer (API key)	Planned	Medium
-Logging & Azure Application Insights	Planned	Medium
+| Feature | Status | Priority |
+|--------|--------|----------|
+| Add download progress indicator | Planned | Medium |
+| Playlist download support | Planned | High |
+| API mode (JSON endpoints) | Planned | High |
+| Authentication layer (API key) | Planned | Medium |
+| Logging & Azure Application Insights | Planned | Medium |
+
+---
+
+## 🧑‍💻 Why This Project Matters for Recruiters
+
+This repository demonstrates:
+
+- Ability to containerize Python/Flask applications  
+- Cloud deployment readiness  
+- Clean, maintainable project structure  
+- Integration with external CLI tools (`yt-dlp`)  
+- Professional documentation and architecture diagrams  
+- Real project demonstrating DevOps and Cloud fundamentals  
+
+---
+
+## 📄 License
+
+MIT License.
