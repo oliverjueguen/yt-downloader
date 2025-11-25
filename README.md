@@ -140,19 +140,6 @@ az containerapp create   --name yt-downloader   --resource-group <group>   --env
 
 ---
 
-## 🧑‍💻 Why This Project Matters for Recruiters
-
-This repository demonstrates:
-
-- Ability to containerize Python/Flask applications  
-- Cloud deployment readiness  
-- Clean, maintainable project structure  
-- Integration with external CLI tools (`yt-dlp`)  
-- Professional documentation and architecture diagrams  
-- Real project demonstrating DevOps and Cloud fundamentals  
-
----
-
 ## 📄 License
 
 MIT License.
